@@ -33,32 +33,31 @@ function updateSlide() {
 	for (let i = 0; i < dots.length; i++) {
 		const dot = dots[i];
 		dot.classList.toggle('dot_selected', i === currentSlide);
-	  }
 	}
+}
   
-	function passerSlide(direction) {
-		if (direction === 'droite') {
-		  // Incrémente sans dépasser dernier élément du tableau
-		  if (currentSlide + 1 < slides.length) {
-			currentSlide++;
-		  } else {
-			currentSlide = 0;
-		  }
-		} else if (direction === 'gauche') {
-		  // Décrémente sans dépasser premier élément du tableau
-		  if (currentSlide - 1 >= 0) {
-			currentSlide--;
-		  } else {
-			currentSlide = slides.length - 1;
-		  }
-		}
-	  
-		updateSlide();
-	  }
-	  
-	  arrow_right.addEventListener('click', function() {
-		passerSlide('droite');
-	  });
-	  arrow_left.addEventListener('click', function() {
-		passerSlide('gauche');
-	  });
+function passerSlide(direction) {
+	if (direction === 'droite') {
+	// Incrémente sans dépasser dernier élément du tableau
+	if (currentSlide + 1 < slides.length) {
+		currentSlide++;
+	} else {
+		currentSlide = 0;
+	}
+	} else if (direction === 'gauche') {
+	// Décrémente sans dépasser premier élément du tableau
+	if (currentSlide - 1 >= 0) {
+		currentSlide--;
+	} else {
+		currentSlide = slides.length - 1;
+	}
+	}
+	updateSlide();
+}
+
+arrow_right.addEventListener('click', function() {
+	passerSlide('droite');
+});
+arrow_left.addEventListener('click', function() {
+	passerSlide('gauche');
+});
