@@ -38,17 +38,18 @@ function updateSlide() {
   
 function passerSlide(direction) {
 	if (direction === 'droite') {
-		// Incrémente sans dépasser dernier élément du tableau
 		if (currentSlide + 1 < slides.length) {
 			currentSlide++;
-		} else {
+		}
+		else {
 			currentSlide = 0;
 		}
-		} else if (direction === 'gauche') {
-		// Décrémente sans dépasser premier élément du tableau
+	}
+	else if (direction === 'gauche') {
 		if (currentSlide - 1 >= 0) {
 			currentSlide--;
-		} else {
+		}
+		else {
 			currentSlide = slides.length - 1;
 		}
 	}
